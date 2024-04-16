@@ -1,6 +1,12 @@
 <?php
 
-// config for RyanChandler/BladeLint
+use RyanChandler\BladeLint\Rules;
+
 return [
+
+    'rules' => [
+        Rules\VerifyForelseHasEmpty::class,
+        Rules\DisallowRawEcho::class,
+    ]
 
 ];

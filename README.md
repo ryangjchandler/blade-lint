@@ -5,48 +5,56 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ryangjchandler/blade-lint/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ryangjchandler/blade-lint/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ryangjchandler/blade-lint.svg?style=flat-square)](https://packagist.org/packages/ryangjchandler/blade-lint)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Blade Lint provides a set of tools for linting Blade templates. It comes with a set of default rules, as well as APIs for writing your own custom rules.
+
+> This package is not designed to format Blade templates. If you're looking for a Blade formatter, use [Pint](https://laravel.com/docs/pint) instead.
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via Composer:
 
 ```bash
 composer require ryangjchandler/blade-lint
 ```
 
-You can publish and run the migrations with:
+Setup Blade Lint inside of your project:
 
-```bash
-php artisan vendor:publish --tag="blade-lint-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="blade-lint-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="blade-lint-views"
+```sh
+php artisan install:blade-lint
 ```
 
 ## Usage
 
-```php
-$bladeLint = new RyanChandler\BladeLint();
-echo $bladeLint->echoPhrase('Hello, RyanChandler!');
+This package provides a single `blade:lint` command. 
+
+```sh
+php artisan blade:lint
 ```
+
+This will validate the syntax and run all registered `Rule` classes against the files found in your project.
+
+To configure which rules run, modify the `rules` array inside of the `config/blade-lint.php` file.
+
+> For a full list of available rules, check the [Rules](#rules) section.
+
+```php
+use RyanChandler\BladeLint\Rules;
+
+return [
+
+    'rules' => [
+        Rules\VerifyDirectivePairs::class,
+        Rules\DisallowRawEcho::class,
+        Rules\VerifyForelseHasEmpty::class,
+        // Register your custom rules here...
+    ],
+
+];
+```
+
+### Rules
+
+This package provides a set of useful rules out of the box. Use the table below to find a rule and an example of what it does.
 
 ## Testing
 

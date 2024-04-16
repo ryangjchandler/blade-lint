@@ -2,7 +2,6 @@
 
 namespace RyanChandler\BladeLint\Rules;
 
-use Stillat\BladeParser\Nodes\BaseNode;
 use RyanChandler\BladeLint\ErrorCollector;
 use Stillat\BladeParser\Nodes\AbstractNode;
 use Stillat\BladeParser\Nodes\EchoNode;

@@ -11,7 +11,8 @@ readonly class Error
         public string $message,
         public Position $position,
         public ErrorSeverity $severity,
-    ) {}
+    ) {
+    }
 
     public function getLine(): int
     {

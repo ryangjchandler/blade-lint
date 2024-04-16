@@ -7,6 +7,6 @@ return [
     'rules' => [
         Rules\VerifyForelseHasEmpty::class,
         Rules\DisallowRawEcho::class,
-    ]
+    ],
 
 ];

@@ -4,7 +4,6 @@ namespace RyanChandler\BladeLint;
 
 use Stillat\BladeParser\Document\Document;
 use Stillat\BladeParser\Nodes\AbstractNode;
-use Stillat\BladeParser\Nodes\BaseNode;
 
 class Traverser
 {

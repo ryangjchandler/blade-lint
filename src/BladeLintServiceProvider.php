@@ -4,8 +4,6 @@ namespace RyanChandler\BladeLint;
 
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\View\FileViewFinder;
-use Illuminate\View\ViewFinderInterface;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

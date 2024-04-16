@@ -7,7 +7,6 @@ use RyanChandler\BladeLint\BladeLintManager;
 use RyanChandler\BladeLint\Error;
 use RyanChandler\BladeLint\Traverser;
 use Stillat\BladeParser\Document\Document;
-use Symfony\Component\Console\Helper\TableStyle;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class LintCommand extends Command
@@ -53,7 +52,7 @@ class LintCommand extends Command
             $this->table(['Type', 'Line', 'Message'], collect($errors)->map(fn (Error $error) => [
                 $error->getSeverity()->toStyledString(),
                 $error->getLine(),
-                $error->getMessage()
+                $error->getMessage(),
             ]), 'compact');
         }
 

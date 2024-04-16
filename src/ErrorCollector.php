@@ -2,7 +2,6 @@
 
 namespace RyanChandler\BladeLint;
 
-use Illuminate\Support\Collection;
 use Stillat\BladeParser\Nodes\BaseNode;
 
 class ErrorCollector

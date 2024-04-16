@@ -2,10 +2,9 @@
 
 namespace RyanChandler\BladeLint\Rules;
 
-use Stillat\BladeParser\Nodes\AbstractNode;
 use RyanChandler\BladeLint\ErrorCollector;
+use Stillat\BladeParser\Nodes\AbstractNode;
 use Stillat\BladeParser\Nodes\DirectiveNode;
-use Stillat\BladeParser\Nodes\Structures\ForElse;
 
 class VerifyForelseHasEmpty implements Rule
 {

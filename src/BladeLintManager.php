@@ -14,7 +14,8 @@ class BladeLintManager
         protected Application $laravel,
         protected FileViewFinder $viewFinder,
         protected array $ruleClasses,
-    ) {}
+    ) {
+    }
 
     public function getRegisteredViewPaths(): Collection
     {

@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ryangjchandler/blade-lint/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ryangjchandler/blade-lint/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ryangjchandler/blade-lint.svg?style=flat-square)](https://packagist.org/packages/ryangjchandler/blade-lint)
 
-Blade Lint provides a set of tools for linting Blade templates. It comes with a set of default rules, as well as APIs for writing your own custom rules.
+Blade Lint provides a set of tools for linting Blade templates. It comes with a set of default rules, as well as APIs for writing your own custom rules. Under the hood, it is powered by the excellent [`blade-parser`](https://stillat.com/blade-parser) package.
 
 > This package is not designed to format Blade templates. If you're looking for a Blade formatter, use [Pint](https://laravel.com/docs/pint) instead.
 

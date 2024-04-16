@@ -56,6 +56,43 @@ return [
 
 This package provides a set of useful rules out of the box. Use the table below to find a rule and an example of what it does.
 
+> Coming soon.
+
+### Custom Rules
+
+Writing your own custom rules can be a really powerful way of improving your code quality.
+
+Start by creating a class that implements `RyanChandler\BladeLint\Rules\Rule`.
+
+```php
+namespace App\Linting\Rules;
+
+use RyanChandler\BladeLint\Rules\Rule;
+use RyanChandler\BladeLint\ErrorCollector;
+use Stillat\BladeParser\Nodes\AbstractNode;
+
+class MyCustomRule implements Rule
+{
+    public function check(AbstractNode $node, ErrorCollector $errorCollector): void
+    {
+        //
+    }
+
+    public function getRuleId(): string
+    {
+        return 'internal.my-custom-rule';
+    }
+}
+```
+
+The `check()` method is used to validate a single node. For more information on the structure of a `Node`, consult the [Blade parser](https://stillat.com/blade-parser/v1/getting-started) documentation.
+
+The `getRuleId()` method is used to specify the "readable" name for a rule. This allows you to ignore or silence the rule in certain places throughout your Blade templates.
+
+```blade
+{!! $html !!} {{-- @lint:ignore internal.my-custom-rule --}}
+```
+
 ## Testing
 
 ```bash
